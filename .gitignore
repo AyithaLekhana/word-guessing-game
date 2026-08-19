@@ -1,0 +1,13 @@
+# Eclipse build output
+bin/
+target/
+*.class
+
+# Eclipse project files (optional to ignore — some prefer committing these)
+.settings/
+.classpath
+.project
+
+# OS files
+.DS_Store
+Thumbs.db
