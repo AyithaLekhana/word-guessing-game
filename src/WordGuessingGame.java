@@ -4,25 +4,47 @@ import java.util.Set;
 
 public class WordGuessingGame {
 
-    private static final String[] WORDS = {
-            "apple", "banana", "orange", "grape", "melon",
-            "cherry", "mango", "papaya", "lemon", "kiwi"
+    /** Pairs a secret word with a clue describing it. */
+    private static class WordClue {
+        final String word;
+        final String clue;
+
+        WordClue(String word, String clue) {
+            this.word = word;
+            this.clue = clue;
+        }
+    }
+
+    private static final WordClue[] WORD_BANK = {
+            new WordClue("apple",  "A common fruit that's often red or green, and keeps the doctor away."),
+            new WordClue("banana", "A long, curved yellow fruit that monkeys love."),
+            new WordClue("orange", "A round citrus fruit that shares its name with a color."),
+            new WordClue("grape",  "A small, round fruit that grows in bunches and can be made into wine."),
+            new WordClue("melon",  "A large, round fruit with a sweet, watery interior."),
+            new WordClue("cherry", "A small, red stone fruit often seen on top of desserts."),
+            new WordClue("mango",  "A sweet tropical fruit sometimes called the king of fruits."),
+            new WordClue("papaya", "An orange-fleshed tropical fruit with black seeds inside."),
+            new WordClue("lemon",  "A sour, bright yellow citrus fruit."),
+            new WordClue("kiwi",   "A small fruit with fuzzy brown skin and bright green flesh inside.")
     };
 
     public static final int MAX_ATTEMPTS = 6;
 
     private final String secretWord;
+    private final String clue;
     private final Set<Character> guessedLetters = new HashSet<>();
     private final Set<Character> wrongLetters = new HashSet<>();
     private int remainingAttempts = MAX_ATTEMPTS;
 
     public WordGuessingGame() {
-        this.secretWord = pickRandomWord();
+        WordClue chosen = pickRandomEntry();
+        this.secretWord = chosen.word.toLowerCase();
+        this.clue = chosen.clue;
     }
 
-    private String pickRandomWord() {
+    private WordClue pickRandomEntry() {
         Random random = new Random();
-        return WORDS[random.nextInt(WORDS.length)].toLowerCase();
+        return WORD_BANK[random.nextInt(WORD_BANK.length)];
     }
 
     public String getMaskedWord() {
@@ -31,6 +53,10 @@ public class WordGuessingGame {
             sb.append(guessedLetters.contains(c) ? Character.toUpperCase(c) : '*');
         }
         return sb.toString();
+    }
+
+    public String getClue() {
+        return clue;
     }
 
     private boolean isWordFullyGuessed() {
