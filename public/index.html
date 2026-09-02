@@ -102,6 +102,31 @@
     50% { opacity: 1; }
   }
 
+  /* ---------- Clue panel ---------- */
+  .clue-panel {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .clue-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+
+  #clueText {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--cream);
+    padding: 0 10px;
+  }
+
   /* ---------- Status line ---------- */
   #statusLine {
     text-align: center;
@@ -325,6 +350,11 @@
     <div class="marquee">
       <div class="marquee-bulbs" id="marqueeBulbs"></div>
 
+      <div class="clue-panel">
+        <div class="clue-label">Tonight's Clue</div>
+        <div id="clueText">Loading…</div>
+      </div>
+
       <div id="statusLine" role="status" aria-live="polite">Starting a new round…</div>
 
       <div id="resultBanner" class="result-banner"></div>
@@ -359,6 +389,7 @@
   const bannerEl = document.getElementById('resultBanner');
   const newGameBtn = document.getElementById('newGameBtn');
   const marqueeBulbsEl = document.getElementById('marqueeBulbs');
+  const clueTextEl = document.getElementById('clueText');
 
   const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
@@ -368,7 +399,6 @@
     for (let i = 0; i < count; i++) {
       const b = document.createElement('span');
       const t = i / count;
-      // distribute around the rounded-rect perimeter roughly
       const side = Math.floor(t * 4);
       const pos = (t * 4) % 1;
       let x, y;
@@ -434,6 +464,8 @@
     sessionId = data.sessionId;
     maxAttempts = data.maxAttempts;
 
+    clueTextEl.textContent = '"' + data.clue + '"';
+
     renderBoard(data.masked);
     renderTracker(data.wrongLetters.length);
     attemptsEl.textContent = data.remainingAttempts;
@@ -463,6 +495,7 @@
   async function startNewGame() {
     statusEl.textContent = 'Starting a new round…';
     statusEl.className = '';
+    clueTextEl.textContent = 'Loading…';
     bannerEl.classList.remove('show');
     buildKeyboard();
 
