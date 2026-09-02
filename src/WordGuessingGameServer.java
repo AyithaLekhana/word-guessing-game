@@ -159,6 +159,7 @@ public class WordGuessingGameServer {
         StringBuilder json = new StringBuilder();
         json.append("{");
         json.append("\"sessionId\":\"").append(sessionId).append("\",");
+        json.append("\"clue\":\"").append(escapeJson(game.getClue())).append("\",");
         json.append("\"masked\":\"").append(game.getMaskedWord()).append("\",");
         json.append("\"wrongLetters\":[").append(wrong).append("],");
         json.append("\"remainingAttempts\":").append(game.getRemainingAttempts()).append(",");
