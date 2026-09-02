@@ -1,5 +1,6 @@
 # Word Guess — Java Word Guessing Game
 
+
 A word-guessing (hangman-style) game with a Java backend and a web frontend.
 Built with plain Java (no frameworks) — the REST API uses the JDK's built-in
 `HttpServer`, and the frontend is vanilla HTML/CSS/JS.
