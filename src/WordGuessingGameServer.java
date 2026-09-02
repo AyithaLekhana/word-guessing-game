@@ -15,7 +15,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class WordGuessingGameServer {
 
     private static final Map<String, WordGuessingGame> SESSIONS = new ConcurrentHashMap<>();
-    private static final int PORT = 8080;
+    private static final int PORT = System.getenv("PORT") != null
+            ? Integer.parseInt(System.getenv("PORT"))
+            : 8080;
     private static final String STATIC_DIR = "public";
 
     public static void main(String[] args) throws IOException {
