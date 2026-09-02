@@ -57,4 +57,4 @@ Built with plain Java (no frameworks) — the REST API uses the JDK's built-in
 
 ## Author
 
-Built as part of a Java workshop assignment, extended into a full-stack project.
+Built and actively developed by Lekhana Ayitha as a self-directed project to practice full-stack Java development, REST API design, and frontend engineering.
