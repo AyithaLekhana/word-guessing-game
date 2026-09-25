@@ -16,16 +16,31 @@ public class WordGuessingGame {
     }
 
     private static final WordClue[] WORD_BANK = {
-            new WordClue("apple",  "A common fruit that's often red or green, and keeps the doctor away."),
-            new WordClue("banana", "A long, curved yellow fruit that monkeys love."),
-            new WordClue("orange", "A round citrus fruit that shares its name with a color."),
-            new WordClue("grape",  "A small, round fruit that grows in bunches and can be made into wine."),
-            new WordClue("melon",  "A large, round fruit with a sweet, watery interior."),
-            new WordClue("cherry", "A small, red stone fruit often seen on top of desserts."),
-            new WordClue("mango",  "A sweet tropical fruit sometimes called the king of fruits."),
-            new WordClue("papaya", "An orange-fleshed tropical fruit with black seeds inside."),
-            new WordClue("lemon",  "A sour, bright yellow citrus fruit."),
-            new WordClue("kiwi",   "A small fruit with fuzzy brown skin and bright green flesh inside.")
+            new WordClue("apple",     "A common fruit that's often red or green, and keeps the doctor away."),
+            new WordClue("banana",    "A long, curved yellow fruit that monkeys love."),
+            new WordClue("orange",    "A round citrus fruit that shares its name with a color."),
+            new WordClue("grape",     "A small, round fruit that grows in bunches and can be made into wine."),
+            new WordClue("melon",     "A large, round fruit with a sweet, watery interior."),
+            new WordClue("cherry",    "A small, red stone fruit often seen on top of desserts."),
+            new WordClue("mango",     "A sweet tropical fruit sometimes called the king of fruits."),
+            new WordClue("papaya",    "An orange-fleshed tropical fruit with black seeds inside."),
+            new WordClue("lemon",     "A sour, bright yellow citrus fruit."),
+            new WordClue("kiwi",      "A small fruit with fuzzy brown skin and bright green flesh inside."),
+            new WordClue("elephant",  "The largest land animal, known for its long trunk and big ears."),
+            new WordClue("giraffe",   "The tallest living animal, famous for its extremely long neck."),
+            new WordClue("penguin",   "A flightless bird that lives mostly in the Southern Hemisphere and loves to swim."),
+            new WordClue("octopus",   "A sea creature with eight arms and three hearts."),
+            new WordClue("kangaroo",  "An Australian marsupial that carries its young in a pouch and hops to get around."),
+            new WordClue("dolphin",   "A highly intelligent marine mammal known for its playful jumps and clicking sounds."),
+            new WordClue("volcano",   "A mountain that can erupt, spewing hot lava and ash."),
+            new WordClue("glacier",   "A massive, slow-moving river of ice formed over many years."),
+            new WordClue("rainbow",   "A colorful arc that appears in the sky after rain, caused by sunlight and water droplets."),
+            new WordClue("tornado",   "A violently rotating column of air that touches both the ground and a cloud."),
+            new WordClue("guitar",    "A stringed musical instrument often played by strumming or plucking."),
+            new WordClue("violin",    "A small, four-stringed instrument played with a bow, known for its rich sound."),
+            new WordClue("telescope", "A device used to see distant objects, especially stars and planets, up close."),
+            new WordClue("pyramid",   "An ancient stone structure with a square base and triangular sides, famously built in Egypt."),
+            new WordClue("waterfall", "A place where water flows over a steep drop, often creating mist and a roaring sound.")
     };
 
     public static final int MAX_ATTEMPTS = 6;
